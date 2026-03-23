@@ -1,0 +1,19 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<int, string> studentMap;
+
+    // Insert key-value pairs
+    studentMap[101] = "Rahul";
+    studentMap[102] = "Anita";
+    studentMap[103] = "Sita";
+
+    // Display all elements
+    for (map<int, string>::iterator it = studentMap.begin(); it != studentMap.end(); ++it) {
+        cout << "StudentID: " << it->first << ", Name: " << it->second << endl;
+    }
+
+    return 0;
+}
