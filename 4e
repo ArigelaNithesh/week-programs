@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+int search(Node* head, int key) {
+    Node* temp = head;
+    int pos = 1;
+    while (temp != nullptr) {
+        if (temp->data == key) return pos;
+        temp = temp->next;
+        pos++;
+    }
+    return -1; // not found
+}
+
+int main() {
+    Node* head = new Node{10, nullptr};
+    head->next = new Node{20, nullptr};
+    head->next->next = new Node{30, nullptr};
+
+    int key = 20;
+    int pos = search(head, key);
+    if (pos != -1) cout << key << " found at position " << pos << endl;
+    else cout << key << " not found.\n";
+
+    // Free memory
+    while (head != nullptr) { Node* temp = head; head = head->next; delete temp; }
+
+    return 0;
+}
