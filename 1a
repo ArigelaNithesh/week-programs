@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int rollNumber;
+    string name;
+    float marks;
+
+public:
+    // Constructor
+    Student(int r, string n, float m) {
+        rollNumber = r;
+        name = n;
+        marks = m;
+    }
+
+    // Function to display details
+    void display() {
+        cout << "Roll Number: " << rollNumber << endl;
+        cout << "Name: " << name << endl;
+        cout << "Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    // Creating objects
+    Student student1(101, "Rahul", 85.5);
+    Student student2(102, "Anita", 92.0);
+
+    // Displaying details
+    cout << "Student 1 Details:" << endl;
+    student1.display();
+
+    cout << "\nStudent 2 Details:" << endl;
+    student2.display();
+
+    return 0;
+}
