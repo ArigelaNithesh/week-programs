@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int rollNumber;
+    string name;
+    float marks;
+
+public:
+    Student() {
+        rollNumber = 0;
+        name = "Unknown";
+        marks = 0;
+    }
+
+    ~Student() {
+        cout << "Destructor called for " << name << endl;
+    }
+
+    void input() {
+        cout << "Enter Roll Number: ";
+        cin >> rollNumber;
+        cout << "Enter Name: ";
+        cin >> name;
+        cout << "Enter Marks: ";
+        cin >> marks;
+    }
+
+    void display() {
+        cout << "Roll Number: " << rollNumber << endl;
+        cout << "Name: " << name << endl;
+        cout << "Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter number of students: ";
+    cin >> n;
+
+    // Dynamic allocation
+    Student* students = new Student[n];
+
+    // Input
+    for (int i = 0; i < n; i++) {
+        cout << "\nEnter details for Student " << i + 1 << ":\n";
+        students[i].input();
+    }
+
+    // Display
+    cout << "\nStudent Details:\n";
+    for (int i = 0; i < n; i++) {
+        students[i].display();
+        cout << endl;
+    }
+
+    // ✅ Releasing memory
+    delete[] students;
+
+    cout << "\nMemory deallocated successfully." << endl;
+
+    return 0;
+}
