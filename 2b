@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+// Function template to swap two variables
+template <typename T>
+void swapValues(T &a, T &b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+    float p = 5.5, q = 3.2;
+    char c1 = 'A', c2 = 'B';
+
+    // Swapping integers
+    cout << "Before swapping integers: x=" << x << ", y=" << y << endl;
+    swapValues(x, y);
+    cout << "After swapping integers: x=" << x << ", y=" << y << endl << endl;
+
+    // Swapping floats
+    cout << "Before swapping floats: p=" << p << ", q=" << q << endl;
+    swapValues(p, q);
+    cout << "After swapping floats: p=" << p << ", q=" << q << endl << endl;
+
+    // Swapping characters
+    cout << "Before swapping chars: c1=" << c1 << ", c2=" << c2 << endl;
+    swapValues(c1, c2);
+    cout << "After swapping chars: c1=" << c1 << ", c2=" << c2 << endl;
+
+    return 0;
+}
