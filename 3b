@@ -1,0 +1,24 @@
+#include <iostream>
+#include <list>
+using namespace std;
+
+int main() {
+    list<string> strList;
+
+    // Insert elements
+    strList.push_back("Apple");
+    strList.push_back("Banana");
+    strList.push_back("Cherry");
+
+    // Delete element
+    strList.remove("Banana");
+
+    // Display using iterator
+    cout << "List elements: ";
+    for (list<string>::iterator it = strList.begin(); it != strList.end(); ++it) {
+        cout << *it << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
