@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<int> vec = {50, 10, 30, 50, 20};
+
+    // sort() in ascending order
+    sort(vec.begin(), vec.end());
+    cout << "Sorted vector: ";
+    for (int v : vec) cout << v << " ";
+    cout << endl;
+
+    // find() - search for 30
+    vector<int>::iterator found = find(vec.begin(), vec.end(), 30);
+    if (found != vec.end())
+        cout << "Found 30 at position " << distance(vec.begin(), found) << endl;
+    else
+        cout << "30 not found" << endl;
+
+    // count() - count occurrences of 50
+    int cnt = count(vec.begin(), vec.end(), 50);
+    cout << "50 occurs " << cnt << " times in vector" << endl;
+
+    return 0;
+}
