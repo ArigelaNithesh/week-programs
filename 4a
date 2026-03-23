@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+int main() {
+    Node* node1 = new Node();
+    node1->data = 10;
+    node1->next = nullptr;
+
+    cout << "Node created with data: " << node1->data << endl;
+
+    delete node1; // free memory
+    return 0;
+}
